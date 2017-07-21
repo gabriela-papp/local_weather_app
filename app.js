@@ -4,6 +4,19 @@
                     });
                 
             });
+            var img=[
+                'images/Thunder.jpg',
+                'images/drizzle.jpg',
+                'images/rain.jpg',
+                'images/snow.png',
+                'images/fog.jpg',
+                'images/sunny-weather.jpg',
+                'images/clouds.jpeg',
+                'images/tornado.jpg'
+                
+            ];
+           
+            
             var api ="http://api.openweathermap.org/data/2.5/weather?q=lat='+location.latitude+'&lon='+location.longitude+'&appid=712dd2f8f3ca3dfe13937b3fef907da6&units=metric";
             $.getJSON(api, function(data){
               var temp =data.main.temp;
@@ -18,4 +31,12 @@
                var humidity =data.main.humidity;
                $("#humidity").html(humidity+' %');
 
-            });
+            
+             var id=data.weather[0].id,
+                bgIndex,
+                bgId=[299,399,599,699,799,800,899,900];
+                bgId.push(id);
+                bgIndex=bgId.sort().indexOf(id);
+                
+                $('.display').css('background-image', 'url('+img[bgIndex]+')');
+                });
