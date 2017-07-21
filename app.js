@@ -20,7 +20,7 @@
             var api ="http://api.openweathermap.org/data/2.5/weather?q=lat='+location.latitude+'&lon='+location.longitude+'&appid=712dd2f8f3ca3dfe13937b3fef907da6&units=metric";
             $.getJSON(api, function(data){
               var temp =data.main.temp;
-              $(".temperature").html('<div>'+temp+' &deg; C</div>');
+              $(".temperature").html('<div class="tm">'+temp+'&deg;C</div>');
               var icon = data.weather[0].icon;  
               var weather_icons='http://openweathermap.org/img/w/'+icon+'.png';
                $("#icon").html('<img src="'+weather_icons+'">');
@@ -28,9 +28,10 @@
                $("#name").html(city);
               var description=data.weather[0].description ;
                $("#description").html(description);
+               $("#description").css('text-transform',' capitalize');
                var humidity =data.main.humidity;
-               $("#humidity").html(humidity+' %');
-
+               $("#humidity").html('humidity: '+humidity+' %');
+                $("#humidity").css('text-transform',' capitalize');
             
              var id=data.weather[0].id,
                 bgIndex,
