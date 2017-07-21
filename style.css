@@ -1,0 +1,58 @@
+html{
+    margin: 0;
+    padding: 0;
+    
+}
+.clearfix{
+    clear: both;
+}
+.mobile{
+    width: 300px;
+    height: 570px;
+    background: #232120;
+    margin: 10px auto;
+    border-radius: 30px;
+}
+.display{
+    width: 250px;
+    height: 430px;
+    background: white;
+    margin: 0 auto;
+    position: relative;
+    top: 65px;
+}
+.display h5{
+    text-align: center;
+    padding-top: 20px;
+}
+.oval{
+    width: 60px;
+    height: 12px;
+    background: white;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    top: 29px;
+}
+.dot{
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    top: 75px;
+}
+.temperature{
+    width: 50%;
+    height: 40%;
+    background: blue;
+    float: left;
+}
+.icon{
+     width: 50%;
+    height: 40%;
+    background: green;
+    float:left;
+}
+
