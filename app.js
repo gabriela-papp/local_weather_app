@@ -40,12 +40,12 @@ $(document).ready(function () {
             'images/tornado.jpg'
         ];
 
-        var api = 'http://api.openweathermap.org/data/2.5/weather?q=' + location.city + '&appid=be8da95ce9d52803b2002ed73f623743&units=metric';
+        var api = 'https://api.openweathermap.org/data/2.5/weather?q=' + location.city + '&appid=be8da95ce9d52803b2002ed73f623743&units=metric';
         $.getJSON(api, function (data) {
             var temp = Math.round(data.main.temp);
             $(".temperature").html('<div class="tm">' + temp + '&deg;C</div>');
             var icon = data.weather[0].icon;
-            var weather_icons = 'http://openweathermap.org/img/w/' + icon + '.png';
+            var weather_icons = 'https://openweathermap.org/img/w/' + icon + '.png';
             $("#icon").html('<img src="' + weather_icons + '">');
 
             var city = data.name;
